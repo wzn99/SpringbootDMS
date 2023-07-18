@@ -3,9 +3,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/silk_dormitory?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: 12345678
+    password: 1111
   jackson:
     date-format: yyyy年MM月dd日
+  web:
+    resources:
+      static-locations: classpath:/static/
 
 server:
   port: 8080
@@ -23,3 +26,5 @@ logging:
 
 pagehelper:
   helper-dialect: mysql       # 根据方言来选择合适的分页方式
+
+

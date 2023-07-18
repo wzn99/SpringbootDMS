@@ -25,7 +25,8 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(tokenInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login");                // 针对除了login外的所有请求
+                .excludePathPatterns("/login")// 针对除了login外的所有请求
+                .excludePathPatterns("/page/**","/css/**","/js/**","/api/**","/images/**","/lib/**");
     }
 
     // 使用CorsFilter解决跨域问题
