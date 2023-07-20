@@ -2,7 +2,6 @@ package com.silk.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.silk.entity.Exchange;
-import com.silk.entity.Repair;
 import com.silk.entity.Room;
 import com.silk.entity.User;
 import com.silk.service.BuildingService;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 
