@@ -4,14 +4,8 @@
         <div class="layui-col-md9">
             <!-- 1. 楼栋 -->
             <div class="layuimini-main">
-                <div style="height:270px; margin: 30px" id="silk-building" >
+                <div style="height:100px; margin: 30px" id="silk-building" >
                 </div>
-            </div>
-        </div>
-
-        <div class="layui-col-md3">
-            <div class="layuimini-main">
-                <div id="buildingStatusEcharts" style="height:330px;"></div>
             </div>
         </div>
     </div>
@@ -96,24 +90,6 @@
         var chartDom = document.getElementById('buildingStatusEcharts');
         var myChart = echarts.init(chartDom);
         var option;
-
-        option = {
-            tooltip: {
-                formatter: '{a} <br/>{b} : {c}%'
-            },
-            series: [{
-                name: '楼栋入住率',
-                type: 'gauge',
-                progress: {
-                    show: true
-                },
-                detail: {
-                    valueAnimation: true,
-                    formatter: '{value}'
-                },
-                data: []
-            }]
-        };
 
         myChart.setOption(option);
 
@@ -239,12 +215,6 @@
                         type = '&nbsp&nbsp<a><span class="layui-badge layui-bg-silk-yellowgreen">宿管</span></a>';
                     } else if(item.roomType === 2){
                         type = '&nbsp&nbsp<a><span class="layui-badge layui-bg-silk-gold">后勤中心</span></a>';
-                    } else if(item.roomType === 3){
-                        type = '&nbsp&nbsp<a><span class="layui-badge layui-bg-silk-skyblue">招待所</span></a>';
-                    } else if(item.roomType === 4){
-                        type = '&nbsp&nbsp<a><span class="layui-badge layui-bg-silk-coral">小卖部</span></a>';
-                    } else if(item.roomType === 5){
-                        type = '&nbsp&nbsp<a><span class="layui-badge layui-bg-silk-super-light-gray">杂物间</span></a>';
                     }
 
                     let capacity
@@ -259,10 +229,6 @@
                         <li>
                             <p key='${item.id}'>
                                 ${item.brand}${type}${capacity}
-                                <span>
-                                    <button class="layui-icon layui-icon-add-circle silk-bed-add" title="添加床位"></button>
-                                    <button class="layui-icon layui-icon-delete silk-room-delete" title="删除房间"></button>
-                                </span>
                             </p>
                             <ul class="silk-bed">
                                 <li></li>
@@ -280,33 +246,6 @@
                     htmlObj.find('p').click(function () {
                         $(this).siblings().toggle(300);
                         loadBed($(this).attr("key"), $(this).siblings());
-                    });
-
-                    // 点击后添加床位
-                    htmlObj.find('.silk-bed-add').click(function (event) {
-                        event.stopPropagation();
-                        let roomId =  htmlObj.find('p').attr("key");        // 获取room的ID
-                        axios.get('room/capacity_plus_one?id='+ roomId).then(function (response) {
-                            layer.msg(response.msg);
-                            loadBed(htmlObj.find('p').attr("key"), htmlObj.find('p').siblings());   // 重新加载房间中的床
-                        }).catch(function (error) {
-                            layer.msg(error);
-                        });
-                    });
-
-                    // 点击后删除该房间
-                    htmlObj.find('.silk-room-delete').click(function (event) {
-                        event.stopPropagation();
-                        layer.confirm("确定要删除吗？", function (index) {
-                            let roomIds =  htmlObj.find('p').attr("key");        // 获取room的ID
-                            axios.get('room/delete?ids=' + roomIds).then(function (response) {
-                                layer.msg(response.msg);
-                                htmlObj.remove();               // 前端移除该对象
-                                layer.close(index);
-                            }).catch(function (error) {
-                                layer.msg(error);
-                            });
-                        })
                     });
                     $('.silk-room').append(htmlObj);
                 });
@@ -374,7 +313,7 @@
                             <img class="silk-bed-image" src="../images/bed.png"/>
                             <p style="margin-top: 15px;">床位${bedNo}</p>
                             <p style="margin-top: 0px;">
-                                <i class="layui-icon layui-icon-delete silk-bed-delete" title="删除床位"></i>
+<!--                                <i class="layui-icon layui-icon-delete silk-bed-delete" title="删除床位"></i>-->
                                 <!--<i class="layui-icon layui-icon-edit" title="编辑床位"></i>-->
                             </p>
                         </li>

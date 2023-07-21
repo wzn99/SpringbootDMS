@@ -1,20 +1,9 @@
 package com.silk.entity;
 
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.Length;
 import com.silk.utils.Entity;
-import java.util.Date;
-import java.util.List;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月07日, 周日
- * @description 用户信息
- */
 public class User extends Entity{
 
 	private Integer id;
@@ -24,18 +13,6 @@ public class User extends Entity{
 	private String email;
 	private Integer roomId;
 	private Integer userType;		// 角色类型：学生=0；宿舍管理员=1；后勤中心=2
-
-	/**
-	 * @silkTag 该数据域专为用户中的管理员所创建
-	 * @description 作用：以List存储管理员所在楼栋的所有寝室水电账单付款情况
-	 */
-	private List<Integer> billPaidInfo;
-
-	/**
-	 * @silkTag 该数据域专为用户中的管理员所创建
-	 * @description 作用：以List存储管理员所在楼栋的所有寝室水电账单付款情况
-	 */
-	private List<Double> billUsedAndFeeInfo;
 
 	private Building building;
 	private Room room;
@@ -97,22 +74,6 @@ public class User extends Entity{
 
 	public void setUserType(Integer userType) {
 		this.userType = userType;
-	}
-
-	public List<Integer> getBillPaidInfo() {
-		return billPaidInfo;
-	}
-
-	public void setBillPaidInfo(List<Integer> billPaidInfo) {
-		this.billPaidInfo = billPaidInfo;
-	}
-
-	public List<Double> getBillUsedAndFeeInfo() {
-		return billUsedAndFeeInfo;
-	}
-
-	public void setBillUsedAndFeeInfo(List<Double> billUsedAndFeeInfo) {
-		this.billUsedAndFeeInfo = billUsedAndFeeInfo;
 	}
 
 	public Building getBuilding() {

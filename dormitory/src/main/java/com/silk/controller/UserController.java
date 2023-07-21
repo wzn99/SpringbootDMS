@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月03日, 周三
- */
 @RestController
 @RequestMapping("/user")
 public class UserController {

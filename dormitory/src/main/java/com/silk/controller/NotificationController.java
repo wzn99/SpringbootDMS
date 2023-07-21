@@ -15,10 +15,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author LindaSilk
- * @date 2021年3月19日, 周五
- */
 @RestController
 @RequestMapping("/notification")
 public class NotificationController {

@@ -5,11 +5,6 @@ import com.github.pagehelper.PageInfo;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author LindaSilk
- * @date 2021年3月09日, 周二
- * @description 封装结果后返回
- */
 public class Result {
 
     public static final Integer SUCCESS_CODE = 200;     // 访问成功状态码

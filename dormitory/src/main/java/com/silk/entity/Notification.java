@@ -5,11 +5,6 @@ import org.hibernate.validator.constraints.Length;
 import com.silk.utils.Entity;
 import java.util.Date;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月19日, 周五
- */
 public class Notification extends Entity{
 
 

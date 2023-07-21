@@ -2,10 +2,6 @@ package com.silk.entity;
 
 import java.util.List;
 
-/**
- * @author LindaSilk
- * @date 2021年3月10日, 周三
- */
 public class Menu {
 
     private Integer id;

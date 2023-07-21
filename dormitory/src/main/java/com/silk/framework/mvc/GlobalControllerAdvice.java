@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * @author LindaSilk
- * @date 2021年3月10日, 周三
- * @description 全局异常处理
- */
 @ControllerAdvice
 public class GlobalControllerAdvice {
 

@@ -10,11 +10,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月13日, 周六
- */
 @Service
 public class RoomService {
 
@@ -64,43 +59,8 @@ public class RoomService {
         return roomMapper.count(room);
     }
 
-    public int capacityPlusOne(Integer id){
-        return roomMapper.capacityPlusOne(id);
-    }
-
-    public int capacityMinusOne(Integer id){
-        return roomMapper.capacityMinusOne(id);
-    }
-
     public int buildingTotalStudentBedAmount(Integer buildingId){
         return roomMapper.buildingTotalStudentBedAmount(buildingId);
     }
 
-
-    public double queryRoomBalance(Integer roomId){
-        return roomMapper.queryRoomBalance(roomId);
-    }
-
-
-    public int changeBalance(Double newBalance, Integer roomId){
-        return roomMapper.changeBalance(newBalance, roomId);
-    }
-
-    // 查询某栋楼的学生床位总数
-    public int queryTotalStuBed(Integer buildingId){
-        return roomMapper.queryTotalStuBed(buildingId);
-    }
-
-
-//    public int queryTotalStuRoom(Integer buildingId){
-//        return roomMapper.queryTotalStuRoom(buildingId);
-//    }
-
-    public List<Integer> queryEachStuRoomId(Integer buildingId){
-        return roomMapper.queryEachStuRoomId(buildingId);
-    }
-
-    public int queryEachStuRoomFreeBedAmount(Integer roomId){
-        return roomMapper.queryEachStuRoomFreeBedAmount(roomId);
-    }
 }

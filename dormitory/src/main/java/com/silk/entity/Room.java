@@ -1,15 +1,7 @@
 package com.silk.entity;
 
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Length;
 import com.silk.utils.Entity;
-import java.util.Date;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月13日, 周六
- */
 public class Room extends Entity{
 
 
@@ -29,11 +21,9 @@ public class Room extends Entity{
 	 */
 	private Integer roomStatus;
 	/**
-	 * 房间类型：学生寝室=0；宿管寝室=1；后勤办公室=2；招待所=3；小卖部=4；杂物间=5
+	 * 房间类型：学生寝室=0；宿管寝室=1；后勤办公室=2；
 	 */
 	private Integer roomType;
-
-	private Double balance;		// 房间舍费余额
 
 
 
@@ -78,13 +68,5 @@ public class Room extends Entity{
 	}
 	public void setRoomType(Integer roomType) {
 		this.roomType = roomType;
-	}
-
-	public Double getBalance() {
-		return balance;
-	}
-
-	public void setBalance(Double balance) {
-		this.balance = balance;
 	}
 }

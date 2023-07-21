@@ -8,11 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月12日, 周五
- */
 @Service
 public class BuildingService {
 

@@ -10,11 +10,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月19日, 周五
- */
 @Service
 public class NotificationService {
 

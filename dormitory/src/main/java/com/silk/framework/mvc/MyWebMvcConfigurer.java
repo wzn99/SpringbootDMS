@@ -8,10 +8,6 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * @author LindaSilk
- * @date 2021年3月09日, 周二
- */
 @Configuration
 public class MyWebMvcConfigurer implements WebMvcConfigurer {
 

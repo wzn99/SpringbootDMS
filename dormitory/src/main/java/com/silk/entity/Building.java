@@ -1,16 +1,7 @@
 package com.silk.entity;
 
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Length;
 import com.silk.utils.Entity;
-import java.util.Date;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月12日, 周五
- * @description 楼栋信息
- */
 public class Building extends Entity{
 
 	private Integer id;

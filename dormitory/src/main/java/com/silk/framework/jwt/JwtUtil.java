@@ -10,12 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月10日, 周三
- * @description JWT小工具
- */
 public class JwtUtil {
 
     public static String token = "token";
@@ -80,12 +74,4 @@ public class JwtUtil {
             throw new MyException("超时或不合法token");
         }
     }
-
-    public static void main(String[] args) {
-        User user = new User();
-        user.setId(10);
-        user.setUserName("admin");
-        System.out.println(sign(user));
-    }
-
 }

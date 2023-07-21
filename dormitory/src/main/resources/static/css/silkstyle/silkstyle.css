@@ -23,10 +23,44 @@ body {
 
 
 .silk-transparent {
-
+    background-color: #00F7DE;
 }
 
 
 .silk-input-bg-gray {
     background: #C0C0C0;
+}
+/* Style for the select dropdown */
+.item2 select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for the dropdown arrow icon */
+.item2 select::-ms-expand {
+    display: none; /* Hide default arrow icon on IE10 and IE11 */
+}
+
+/* Optional: Style the dropdown arrow icon for modern browsers */
+.item2 select::after {
+    content: "\25BC";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Optional: Style the select dropdown when it's focused */
+.item2 select:focus {
+    outline: none;
+    border-color: #4CAF50; /* Add a different border color when focused */
+}
+
+/* Optional: Style the select dropdown options */
+.item2 select option {
+    padding: 10px;
 }

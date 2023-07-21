@@ -1,10 +1,5 @@
 package com.silk.utils;
 
-/**
- * @author LindaSilk
- * @date 2021年3月08日, 周一
- * @description 该部分用来做分页
- */
 public class Entity {
 
     private Integer page;           // 页码数

@@ -15,11 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月13日, 周六
- */
 @RestController
 @RequestMapping("/room")
 public class RoomController {
@@ -75,66 +70,6 @@ public class RoomController {
     public Result queryLiverAmount(Integer id){
         int liverAmount = userService.queryLiverAmount(id);
         return Result.ok(liverAmount);
-    }
-
-
-    // 为房间增加一个床位
-    @GetMapping("capacity_plus_one")
-    public Result capacityPlusOne(Integer id){
-        int flag = roomService.capacityPlusOne(id);
-        if (flag>0){
-            return Result.ok();
-        }else {
-            return Result.fail();
-        }
-    }
-
-    // 为房间减少一个床位
-    @GetMapping("capacity_minus_one")
-    public Result capacityMinusOne(Integer id){
-        int flag = roomService.capacityMinusOne(id);
-        if (flag>0){
-            return Result.ok();
-        }else {
-            return Result.fail();
-        }
-    }
-
-    // 当前楼栋入住率
-    @GetMapping("occupancy_rate")
-    public Result occupancyRate(Integer buildingId){
-        int buildingTotalStudentBedAmount = roomService.buildingTotalStudentBedAmount(buildingId);
-        int buildingActualStudentAmount = userService.buildingActualStudentAmount(buildingId);
-
-        Double occupancyRate = (double) (buildingActualStudentAmount / buildingTotalStudentBedAmount) * 100;
-
-        BigDecimal bd1 = new BigDecimal(occupancyRate);
-        occupancyRate = bd1.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-
-        System.out.println(buildingId + "栋入住率: " + occupancyRate + "%");
-
-        return Result.ok(occupancyRate);
-
-    }
-
-
-
-    @GetMapping("/query_room_balance")
-    public Result paidInfo(HttpServletRequest request){
-        User param = (User)request.getAttribute("user");                // 获取发起当前操作的学生信息
-        User user1 = userService.detail(param.getId());                     // 从数据库获取该学生的更多信息
-
-        // 将数据处理后四舍五入保留两位小数
-        Double myRoomBalance = roomService.queryRoomBalance(user1.getRoomId());
-        BigDecimal bd1 = new BigDecimal(myRoomBalance);
-        myRoomBalance = bd1.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-
-        // 测试
-        System.out.println("myRoomBalance");
-        System.out.println("----------");
-        System.out.println(myRoomBalance);
-
-        return Result.ok(myRoomBalance);
     }
 
 }

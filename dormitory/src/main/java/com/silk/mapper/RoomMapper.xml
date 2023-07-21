@@ -10,7 +10,6 @@
 		<result column="room_capacity"  property="roomCapacity"/>
 		<result column="room_status"  property="roomStatus"/>
 		<result column="room_type"  property="roomType"/>
-		<result column="balance"  property="balance"/>
 	</resultMap>
 
 	<insert id="create" parameterType="com.silk.entity.Room">
@@ -21,8 +20,7 @@
 			floor,
 			room_capacity,
 			room_status,
-			room_type,
-		    balance
+			room_type
 		)values(
 		    concat(#{buildingId}, #{brand}),
 			#{brand},
@@ -30,8 +28,7 @@
 			#{floor},
 			#{roomCapacity},
 			#{roomStatus},
-			#{roomType},
-		    #{balance}
+			#{roomType}
 		)
 	</insert>
 
@@ -60,7 +57,6 @@
 			room_capacity=#{roomCapacity},
 			room_status=#{roomStatus},
 			room_type=#{roomType}
-			balance=#{balance}
 		where id = #{id}
 	</update>
 
@@ -72,7 +68,6 @@
 			<if test="roomCapacity != null">room_capacity = #{roomCapacity}</if>,
 			<if test="roomStatus != null">room_status = #{roomStatus}</if>,
 			<if test="roomType != null">room_type = #{roomType}</if>
-			<if test="balance != null">balance = #{balance}</if>
 		where id = #{id}
 	</update>
 
@@ -85,7 +80,6 @@
 			<if test="roomCapacity != null">and room_capacity = #{roomCapacity}</if>
 			<if test="roomStatus != null">and room_status = #{roomStatus}</if>
 			<if test="roomType != null">and room_type = #{roomType}</if>
-			<if test="balance != null">and balance = #{balance}</if>
 		</where>
 	</sql>
 
@@ -101,16 +95,6 @@
 	<select id="buildingTotalStudentBedAmount" resultType="int">
 		select sum(room_capacity) from tb_room where building_id = #{buildingId} and room_type = 0
 	</select>
-
-	<select id="queryRoomBalance" resultType="double">
-		select balance from tb_room where id = #{roomId}
-	</select>
-
-
-	<!-- 在用户记下一笔新账后改变账户余额 -->
-	<update id="changeBalance">
-		update tb_room set balance = #{newBalance} where id = #{roomId}
-	</update>
 
 	<!-- 查询某栋楼的学生床位总数 -->
 	<select id="queryTotalStuBed" resultType="int">

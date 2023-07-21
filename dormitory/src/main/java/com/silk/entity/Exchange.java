@@ -1,15 +1,8 @@
 package com.silk.entity;
 
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Length;
 import com.silk.utils.Entity;
 import java.util.Date;
 
-
-/**
- * @author LindaSilk
- * @date 2021年3月16日, 周二
- */
 public class Exchange extends Entity{
 
 	private Integer id;

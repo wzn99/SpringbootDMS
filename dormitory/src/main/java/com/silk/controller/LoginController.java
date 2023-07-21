@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author LindaSilk
- * @date 2021年3月09日, 周二
- */
 @RestController
 public class LoginController {
 

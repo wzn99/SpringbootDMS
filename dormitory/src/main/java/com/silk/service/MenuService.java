@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author LindaSilk
- * @date 2021年3月10日, 周三
- */
 @Service
 public class MenuService {
 

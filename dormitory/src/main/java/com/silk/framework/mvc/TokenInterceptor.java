@@ -9,11 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author LindaSilk
- * @date 2021年3月10日, 周三
- * @description Token拦截器
- */
 public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
@@ -28,15 +23,5 @@ public class TokenInterceptor implements HandlerInterceptor {
         response.setHeader("Access-Control-Expose-Headers", JwtUtil.token); // 将token暴露出来(用于跨域)
         request.setAttribute("user", user);          // 设置用户信息
         return true;
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-
     }
 }
